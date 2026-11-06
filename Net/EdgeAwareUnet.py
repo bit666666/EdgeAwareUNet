@@ -23,20 +23,20 @@ class ConvBlock(nn.Module):
         return self.layer(x)
 class EdgeAttentionModule(nn.Module):
     """
-    边缘注意力模块：增强对小目标边缘和细节的关注
-    特点：
-    1. 捕获多尺度边缘特征
-    2. 生成精细的边缘注意力图
-    3. 与主特征融合，增强小目标特征表达
+    Edge-attention module that emphasizes boundaries and fine details of small targets.
+    Features:
+    1. Extracts multi-scale edge features.
+    2. Generates a fine-grained edge-attention map.
+    3. Fuses edge cues with main features to improve small-target representation.
     """
 
     def __init__(self, channel, reduction=4):
         super(EdgeAttentionModule, self).__init__()
-        # 边缘检测卷积 - 使用不同的边缘检测核
+
         self.edge_conv1 = nn.Conv2d(channel, channel // reduction, kernel_size=3, stride=1, padding=1)
         self.edge_conv2 = nn.Conv2d(channel, channel // reduction, kernel_size=3, stride=1, padding=2, dilation=2)
 
-        # Sobel算子用于边缘检测
+
         self.register_buffer('sobel_x', torch.tensor([
             [-1., 0., 1.],
             [-2., 0., 2.],
@@ -49,7 +49,7 @@ class EdgeAttentionModule(nn.Module):
             [1., 2., 1.]
         ]).view(1, 1, 3, 3).repeat(channel // reduction, 1, 1, 1))
 
-        # 注意力生成
+
         self.attention = nn.Sequential(
             nn.Conv2d(channel // reduction * 2, channel // reduction, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(channel // reduction),
@@ -58,30 +58,30 @@ class EdgeAttentionModule(nn.Module):
             nn.Sigmoid()
         )
 
-        # 特征细化
+
         self.refine_conv = nn.Conv2d(channel, channel, kernel_size=3, stride=1, padding=1)
 
     def forward(self, x):
-        # 基础边缘特征提取
+
         b,c,h,w=x.size()
         edge1 = self.edge_conv1(x)
         edge2 = self.edge_conv2(x)
 
-        # 使用Sobel算子增强边缘检测
+
         edge_x = F.conv2d(edge1, self.sobel_x, groups=edge1.size(1), padding=1)
         edge_y = F.conv2d(edge1, self.sobel_y, groups=edge1.size(1), padding=1)
-        edge_detail = torch.sqrt(edge_x ** 2 + edge_y ** 2 + 1e-8)  # 边缘强度
+        edge_detail = torch.sqrt(edge_x ** 2 + edge_y ** 2 + 1e-8)
 
         edge_feat = torch.cat([edge_detail, edge2], dim=1)
 
-        # 生成注意力图
+
         attn_map = self.attention(edge_feat)
         # attn_map_numpy = attn_map.cpu().numpy()
         # np.save(f'./attention_numpy/attn_map_{c}.npy', attn_map_numpy)
-        # 应用注意力到原始特征
+
         attn_feat = x * attn_map
 
-        # 特征细化并与原始特征残差连接
+
         refined_feat = self.refine_conv(attn_feat) + x
 
         return refined_feat
@@ -107,7 +107,7 @@ class EdgeEncoder(nn.Module):
         residual = self.residual_conv(x)
         main_out = main_out + residual
 
-        # 应用边缘注意力
+
         attn_out = self.edge_attention(main_out)
 
         return self.final_relu(attn_out)
@@ -194,7 +194,7 @@ class EEM(nn.Module):
     def forward(self, x):
         edge_map = self.edge_feat(x)  # [B,1,H,W]
 
-        # 计算空间注意力（基于输入x和边缘图）
+
         avg_feat = torch.mean(x, dim=1, keepdim=True)  # [B,1,H,W]
         spatial_input = torch.cat([avg_feat, edge_map], dim=1)
         spatial_att = self.spatial_attention(spatial_input)  # [B,1,H,W]
@@ -222,7 +222,7 @@ class baseline_EdgeEncoder(nn.Module):
         self.decoderConv2 = ConvBlock(c[3] + c[2], c[2])
         self.decoderConv3 = ConvBlock(c[2] + c[1], c[1])
         self.decoderConv4 = ConvBlock(c[1] + c[0], c[0])
-        # 输出
+
         self.out = nn.Conv2d(c[0], classes, kernel_size=1)
 
     def forward(self, x):
@@ -327,7 +327,7 @@ class EdgeAwareUnet(nn.Module):
         self.decoderConv4 = ConvBlock(c[1] + c[0], c[0])
 
         self.out = nn.Conv2d(c[0], classes, kernel_size=1)
-        # 深度监督
+
         self.sup1 = self._make_supervision_layer(c[3], classes)
         self.sup2 = self._make_supervision_layer(c[2], classes)
         self.sup3 = self._make_supervision_layer(c[1], classes)
@@ -389,39 +389,39 @@ if __name__ == "__main__":
     os.environ['CUDA_VISIBLE_DEVICES'] = '5'
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-    # 初始化模型
-    model = EdgeAwareUnet(2).to(device)
-    model.eval()  # 推理时应使用eval模式
 
-    # 创建输入张量
+    model = EdgeAwareUnet(2).to(device)
+    model.eval()
+
+
     input_image = torch.randn(1, 3, 256, 512).to(device)
 
-    # 预热模型（排除首次推理的额外开销）
+
     with torch.no_grad():
         for _ in range(10):
             output = model(input_image)
 
-    # 测量推理时间
+
     with torch.no_grad():
         start_time = time.time()
-        # 多次推理取平均
+
         num_runs = 100
         for _ in range(num_runs):
             output = model(input_image)
         end_time = time.time()
 
-    # 计算FPS
+
     total_time = end_time - start_time
     avg_time_per_image = total_time / num_runs
     fps = 1 / avg_time_per_image
 
-    # 计算FLOPs和参数量
+
     flops, params = profile(model, inputs=(input_image,))
 
-    # 输出结果
-    print(f"输入尺寸: {input_image.shape}")
-    print(f"输出尺寸: {output[0].shape}")
-    print(f"参数量: {sum(p.numel() for p in model.parameters()) / 1e6:.2f}M")
-    print(f"计算量: {flops / 1e9:.2f} GFLOPs")
-    print(f"平均推理时间: {avg_time_per_image * 1000:.2f} ms")
+
+    print(f"Input shape: {input_image.shape}")
+    print(f"Output shape: {output[0].shape}")
+    print(f"Parameters: {sum(p.numel() for p in model.parameters()) / 1e6:.2f}M")
+    print(f"FLOPs: {flops / 1e9:.2f} GFLOPs")
+    print(f"Average inference time: {avg_time_per_image * 1000:.2f} ms")
     print(f"FPS: {fps:.2f}")
