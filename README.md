@@ -1,10 +1,12 @@
 # EdgeAwareUNet
 
-Reference implementation for **EdgeAwareUNet**, a lightweight encoder–decoder network for pixel-level wind-turbine extraction from satellite imagery. The code corresponds to the historical implementation used for the manuscript experiments.
+Reference implementation for **EdgeAwareUNet**, a lightweight encoder–decoder network for pixel-level wind-turbine extraction from satellite imagery.
 
 ## Repository status
 
-This repository contains model, training, and evaluation code. The WTA and WTS image patches and masks are distributed separately at [GL0925/Wind-Turbine-Dataset](https://github.com/GL0925/Wind-Turbine-Dataset). Source imagery and derived annotations remain subject to the original providers’ terms.
+This repository contains a cleaned, runnable binary-segmentation implementation derived from the historical project files. The WTA and WTS image patches and masks are distributed separately at [GL0925/Wind-Turbine-Dataset](https://github.com/GL0925/Wind-Turbine-Dataset). Source imagery and derived annotations remain subject to the original providers’ terms.
+
+The manuscript reports experiments using the historical project configuration: 256 x 512 inputs, Adam, dataset-specific learning rates, a maximum of 350 epochs, patience 25, and repeated runs. This public reference release does not include the historical checkpoints, run logs, the private data-preparation utilities, or the complete multi-run orchestration. Therefore it should not be described as a byte-for-byte reproduction of every reported number.
 
 ## Environment
 
@@ -48,7 +50,9 @@ python scripts/evaluate.py --data /path/to/DATA_ROOT --model edgeaware --checkpo
 
 ## Reproducibility
 
-Set the random seed and split seed explicitly when reproducing a run. The repository does not include trained weights or the WTS/WTA data files.
+Set the random seed and split seed explicitly when reproducing a run. The repository does not include trained weights or the WTS/WTA data files. The evaluation script imports its dataset and metric helpers from `scripts/train.py` and is runnable with a checkpoint produced by the released training script.
+
+The historical WTS training script used two classes and the settings above. The historical WTA configuration used three classes, a learning rate of 1e-3, and batch size 8. Those historical settings are documented here for transparency; the released command-line training script is the maintained binary reference workflow.
 
 ## License
 

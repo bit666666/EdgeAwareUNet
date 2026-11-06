@@ -10,7 +10,7 @@ import sys as _sys
 _sys.path.insert(0, str(_Path(__file__).resolve().parents[1]))
 
 from Net.EdgeAwareUnet import EdgeAwareUnet
-from train_edgeaware_clean import (
+from train import (
     EdgeAwareEfficientNetB4,
     TurbineBinaryDataset,
     update_confusion,
