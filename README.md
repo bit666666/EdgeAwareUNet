@@ -4,7 +4,7 @@ Reference implementation for **EdgeAwareUNet**, a lightweight encoder–decoder 
 
 ## Repository status
 
-This repository contains a cleaned, runnable binary-segmentation implementation derived from the historical project files. The WTA and WTS image patches and masks are distributed separately at [GL0925/Wind-Turbine-Dataset](https://github.com/GL0925/Wind-Turbine-Dataset). Source imagery and derived annotations remain subject to the original providers’ terms.
+This repository contains a cleaned, runnable binary-segmentation implementation derived from the historical project files. The WTA and WTS image patches and masks are distributed separately at [bit666666/Wind-Turbine-Dataset](https://github.com/bit666666/Wind-Turbine-Dataset). Source imagery and derived annotations remain subject to the original providers’ terms.
 
 The manuscript reports experiments using the historical project configuration: 256 x 512 inputs, Adam, dataset-specific learning rates, a maximum of 350 epochs, patience 25, and repeated runs. This public reference release does not include the historical checkpoints, run logs, the private data-preparation utilities, or the complete multi-run orchestration. Therefore it should not be described as a byte-for-byte reproduction of every reported number.
 
