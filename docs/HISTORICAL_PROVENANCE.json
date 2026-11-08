@@ -1,0 +1,116 @@
+{
+  "cutoff_exclusive": "2026-09-08",
+  "recovered_on": "2026-11-08",
+  "files": [
+    {
+      "path": "utils.py",
+      "original_modification_time": "2026-07-02T09:06:06",
+      "original_sha256": "ab520304d2b2da312c5dc0ea2b48f1ca3828fd017c51f7707f8da1489660f029",
+      "released_sha256": "6deef82eb10876880763d33c410a8271230ff5950598cd02577d9bdbd97ff1e5",
+      "computational_ast_unchanged": true,
+      "changes": "English documentation and removal of Chinese comments only"
+    },
+    {
+      "path": "train_ds.py",
+      "original_modification_time": "2026-07-01T15:00:12",
+      "original_sha256": "33d42ed77ed110f00f808cf8ac75e8cef62807d15c02a3d2ce6fcc4e18ec8e74",
+      "released_sha256": "dfac7e48a2ac363cb4c97ddce67ac36d4680e61d58fe9d001338121df174319e",
+      "computational_ast_unchanged": true,
+      "changes": "English documentation and removal of Chinese comments only"
+    },
+    {
+      "path": "eval_2classes.py",
+      "original_modification_time": "2026-07-02T16:45:03",
+      "original_sha256": "76a1e270eafd73d84c26b22a8360af9f251bc0b10b90e1db942f95db7754c214",
+      "released_sha256": "51ae1867cdee9690075ae5271622e9a4aacb037d5b15901be959f3180bcfed27",
+      "computational_ast_unchanged": true,
+      "changes": "English documentation and removal of Chinese comments only"
+    },
+    {
+      "path": "eval_3classes.py",
+      "original_modification_time": "2026-07-02T16:45:03",
+      "original_sha256": "90d97ba0b1ad557ad2ecfd53d04f9628170db87be989a5bb08757a5b63467ff6",
+      "released_sha256": "25c5ab50dff7fb51e4e30fd06c80b7abf9eb96dffaab2d80ff6c4e0ce760a894",
+      "computational_ast_unchanged": true,
+      "changes": "English documentation and removal of Chinese comments only"
+    },
+    {
+      "path": "Net/EdgeAwareUnet.py",
+      "original_modification_time": "2025-08-22T11:36:41",
+      "original_sha256": "09a5bd0c241b86d93bb820fb3544989e115cdf4d5074ff6702a5631a930dbc8e",
+      "released_sha256": "43293f237586926be48043fcc3d21b69f6d28802877661430491fe6370195c9e",
+      "computational_ast_unchanged": true,
+      "changes": "English documentation and removal of Chinese comments only"
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-1_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:53",
+      "original_sha256": "e49c324b33b93562f3434a500ec7da22553a136bcf32c82c01790a351da2cf4f",
+      "released_sha256": "e49c324b33b93562f3434a500ec7da22553a136bcf32c82c01790a351da2cf4f",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-2_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:53",
+      "original_sha256": "205927d74d4d4844cb10e6ec5cd324262ef6002f3fdad78b55a4127158e58684",
+      "released_sha256": "205927d74d4d4844cb10e6ec5cd324262ef6002f3fdad78b55a4127158e58684",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-3_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:53",
+      "original_sha256": "1aa60d02c8a9a1b033d184bea9a004cb508f634417305ac6c9f66e1dabeaa870",
+      "released_sha256": "1aa60d02c8a9a1b033d184bea9a004cb508f634417305ac6c9f66e1dabeaa870",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-4_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:53",
+      "original_sha256": "34b4b03821635e3a4f5e1f56edc9ca41dc018f4276f246c6fadb6fd78f033789",
+      "released_sha256": "34b4b03821635e3a4f5e1f56edc9ca41dc018f4276f246c6fadb6fd78f033789",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-5_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:53",
+      "original_sha256": "1dd8d617c63b882a8f53dff7bfbf12dc6529928af83be0de8cb0a186e1870945",
+      "released_sha256": "1dd8d617c63b882a8f53dff7bfbf12dc6529928af83be0de8cb0a186e1870945",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-1_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:47",
+      "original_sha256": "8e69effb9c751b81adb335af68391e4cee262e3f66d08dedb67e117ec77439c0",
+      "released_sha256": "8e69effb9c751b81adb335af68391e4cee262e3f66d08dedb67e117ec77439c0",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-2_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:47",
+      "original_sha256": "d29e8b3d9cf31464cfcdfc4f8ca6b4bfe942cc76e26ceb3955bffbb439f72bc5",
+      "released_sha256": "d29e8b3d9cf31464cfcdfc4f8ca6b4bfe942cc76e26ceb3955bffbb439f72bc5",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-3_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:47",
+      "original_sha256": "9c626b5b29654ddf76236b160a03241d02b24bfcc3f296852560ab01e2611343",
+      "released_sha256": "9c626b5b29654ddf76236b160a03241d02b24bfcc3f296852560ab01e2611343",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-4_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:47",
+      "original_sha256": "2d5c0804ad8f68a90ec19d7c4b12b20173d4c96c275e0eef22b41e65cfcacf02",
+      "released_sha256": "2d5c0804ad8f68a90ec19d7c4b12b20173d4c96c275e0eef22b41e65cfcacf02",
+      "unchanged": true
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-5_dict.pth",
+      "original_modification_time": "2025-08-07T19:39:47",
+      "original_sha256": "04e36417420e98e7a736d73f9be1e2134f3f64869462d5d6aa1898d780c0ad76",
+      "released_sha256": "04e36417420e98e7a736d73f9be1e2134f3f64869462d5d6aa1898d780c0ad76",
+      "unchanged": true
+    }
+  ]
+}

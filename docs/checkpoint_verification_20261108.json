@@ -1,0 +1,179 @@
+{
+  "environment": {
+    "torch": "1.8.1+cu111",
+    "python": "3.8.20"
+  },
+  "runs": [
+    {
+      "dataset": "WTA",
+      "run": 1,
+      "samples": 35,
+      "historical_class_iou": [
+        0.9956,
+        0.9383,
+        0.9156
+      ],
+      "historical_mean_iou": 0.9498,
+      "global_class_iou": [
+        0.9955692680487169,
+        0.9382864112206525,
+        0.9155784881765684
+      ],
+      "global_mean_iou": 0.949811389148646
+    },
+    {
+      "dataset": "WTA",
+      "run": 2,
+      "samples": 35,
+      "historical_class_iou": [
+        0.9957,
+        0.9407,
+        0.9164
+      ],
+      "historical_mean_iou": 0.9509,
+      "global_class_iou": [
+        0.9957456991427758,
+        0.9406845189646752,
+        0.9164004106579162
+      ],
+      "global_mean_iou": 0.950943542921789
+    },
+    {
+      "dataset": "WTA",
+      "run": 3,
+      "samples": 35,
+      "historical_class_iou": [
+        0.9956,
+        0.94,
+        0.9126
+      ],
+      "historical_mean_iou": 0.9494,
+      "global_class_iou": [
+        0.9956106787328192,
+        0.9400306698424092,
+        0.9126193223539285
+      ],
+      "global_mean_iou": 0.9494202236430523
+    },
+    {
+      "dataset": "WTA",
+      "run": 4,
+      "samples": 35,
+      "historical_class_iou": [
+        0.9959,
+        0.9409,
+        0.9183
+      ],
+      "historical_mean_iou": 0.9517,
+      "global_class_iou": [
+        0.9958741543073336,
+        0.9409018381933929,
+        0.9176700510033844
+      ],
+      "global_mean_iou": 0.9514820145013703
+    },
+    {
+      "dataset": "WTA",
+      "run": 5,
+      "samples": 35,
+      "historical_class_iou": [
+        0.9959,
+        0.9409,
+        0.9144
+      ],
+      "historical_mean_iou": 0.9504,
+      "global_class_iou": [
+        0.9958654443443717,
+        0.9408878038044076,
+        0.9124609967652363
+      ],
+      "global_mean_iou": 0.9497380816380052
+    },
+    {
+      "dataset": "WTS",
+      "run": 1,
+      "samples": 110,
+      "historical_class_iou": [
+        0.999,
+        0.6354
+      ],
+      "historical_mean_iou": 0.8172,
+      "global_class_iou": [
+        0.9990167615340326,
+        0.6354362554419227
+      ],
+      "global_mean_iou": 0.8172265084879777
+    },
+    {
+      "dataset": "WTS",
+      "run": 2,
+      "samples": 110,
+      "historical_class_iou": [
+        0.9991,
+        0.6305
+      ],
+      "historical_mean_iou": 0.8148,
+      "global_class_iou": [
+        0.999058409654323,
+        0.6304697510837264
+      ],
+      "global_mean_iou": 0.8147640803690247
+    },
+    {
+      "dataset": "WTS",
+      "run": 3,
+      "samples": 110,
+      "historical_class_iou": [
+        0.999,
+        0.6283
+      ],
+      "historical_mean_iou": 0.8136,
+      "global_class_iou": [
+        0.9990326784344953,
+        0.62827700357734
+      ],
+      "global_mean_iou": 0.8136548410059177
+    },
+    {
+      "dataset": "WTS",
+      "run": 4,
+      "samples": 110,
+      "historical_class_iou": [
+        0.9991,
+        0.6344
+      ],
+      "historical_mean_iou": 0.8167,
+      "global_class_iou": [
+        0.9990607495649193,
+        0.6344266284509099
+      ],
+      "global_mean_iou": 0.8167436890079146
+    },
+    {
+      "dataset": "WTS",
+      "run": 5,
+      "samples": 110,
+      "historical_class_iou": [
+        0.999,
+        0.6278
+      ],
+      "historical_mean_iou": 0.8134,
+      "global_class_iou": [
+        0.9990323337658619,
+        0.6277957405873393
+      ],
+      "global_mean_iou": 0.8134140371766005
+    }
+  ],
+  "WTA_mean_class_iou": [
+    0.9957,
+    0.9402,
+    0.9155
+  ],
+  "WTA_mean_iou": 0.9505,
+  "WTS_mean_class_iou": [
+    0.999,
+    0.6313
+  ],
+  "WTS_mean_iou": 0.8152
+}

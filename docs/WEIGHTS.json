@@ -1,0 +1,65 @@
+{
+  "release": "historical-2025",
+  "files": [
+    {
+      "path": "weights/wta/EdgeAwareUnet-1_dict.pth",
+      "bytes": 19621671,
+      "sha256": "e49c324b33b93562f3434a500ec7da22553a136bcf32c82c01790a351da2cf4f",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTA_EdgeAwareUnet-1_dict.pth"
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-2_dict.pth",
+      "bytes": 19621671,
+      "sha256": "205927d74d4d4844cb10e6ec5cd324262ef6002f3fdad78b55a4127158e58684",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTA_EdgeAwareUnet-2_dict.pth"
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-3_dict.pth",
+      "bytes": 19621671,
+      "sha256": "1aa60d02c8a9a1b033d184bea9a004cb508f634417305ac6c9f66e1dabeaa870",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTA_EdgeAwareUnet-3_dict.pth"
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-4_dict.pth",
+      "bytes": 19621671,
+      "sha256": "34b4b03821635e3a4f5e1f56edc9ca41dc018f4276f246c6fadb6fd78f033789",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTA_EdgeAwareUnet-4_dict.pth"
+    },
+    {
+      "path": "weights/wta/EdgeAwareUnet-5_dict.pth",
+      "bytes": 19621671,
+      "sha256": "1dd8d617c63b882a8f53dff7bfbf12dc6529928af83be0de8cb0a186e1870945",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTA_EdgeAwareUnet-5_dict.pth"
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-1_dict.pth",
+      "bytes": 19620647,
+      "sha256": "8e69effb9c751b81adb335af68391e4cee262e3f66d08dedb67e117ec77439c0",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTS_EdgeAwareUnet-1_dict.pth"
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-2_dict.pth",
+      "bytes": 19620647,
+      "sha256": "d29e8b3d9cf31464cfcdfc4f8ca6b4bfe942cc76e26ceb3955bffbb439f72bc5",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTS_EdgeAwareUnet-2_dict.pth"
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-3_dict.pth",
+      "bytes": 19620647,
+      "sha256": "9c626b5b29654ddf76236b160a03241d02b24bfcc3f296852560ab01e2611343",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTS_EdgeAwareUnet-3_dict.pth"
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-4_dict.pth",
+      "bytes": 19620647,
+      "sha256": "2d5c0804ad8f68a90ec19d7c4b12b20173d4c96c275e0eef22b41e65cfcacf02",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTS_EdgeAwareUnet-4_dict.pth"
+    },
+    {
+      "path": "weights/wts/EdgeAwareUnet-5_dict.pth",
+      "bytes": 19620647,
+      "sha256": "04e36417420e98e7a736d73f9be1e2134f3f64869462d5d6aa1898d780c0ad76",
+      "url": "https://github.com/bit666666/EdgeAwareUNet/releases/download/historical-2025/WTS_EdgeAwareUnet-5_dict.pth"
+    }
+  ]
+}

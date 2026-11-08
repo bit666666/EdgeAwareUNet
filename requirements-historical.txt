@@ -1,0 +1,6 @@
+# Install the matching PyTorch/torchvision pair separately (see README).
+# Verification used Python 3.8.20, PyTorch 1.8.1+cu111, torchvision 0.9.1+cu111.
+numpy>=1.19,<1.25
+Pillow>=7,<10
+tqdm>=4
+thop==0.1.1.post2209072238
