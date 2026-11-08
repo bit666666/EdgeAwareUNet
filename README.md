@@ -31,6 +31,7 @@ Install a PyTorch build appropriate to your operating system and hardware. The o
 
 ```bash
 git clone https://github.com/bit666666/Wind-Turbine-Dataset.git
+python Wind-Turbine-Dataset/WTS_dataset/download_training.py
 python scripts/download_weights.py
 ```
 
